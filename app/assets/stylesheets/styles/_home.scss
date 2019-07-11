@@ -121,8 +121,9 @@ p {
 }
 .days, .hours, .minutes, .seconds{
   font-size: 50px;
+  font-weight: 900;
 }
 .smalltext{
-    padding-top: 5px;
+    color: $brand-secondary;
     font-size: 16px;
 }
