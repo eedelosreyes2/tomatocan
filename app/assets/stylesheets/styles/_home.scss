@@ -20,14 +20,14 @@ p {
 }
 #heroTitle, #heroImage small {
     color: white;
-        text-shadow: $overlaid-text;
+    text-shadow: $overlaid-text;
 }
 #haveAccount {
     color: white;
-        font-size: 1.75rem;
+    font-size: 1.75rem;
     text-align: center;
     font-weight: 600;
-        text-shadow: $overlaid-text;
+    text-shadow: $overlaid-text;
 }
 #haveAccount a {
     color: $brand-secondary;
@@ -39,15 +39,15 @@ p {
   display:inline-block;
 }
 #scroll h1{
-    color: white;
-    position: absolute;
-    top: 92%;
-    left: 48.5%;
-    width: 24px;
-    height: 24px;
-    -webkit-animation: scroll-graphic 1.5s infinite;
-    animation: scroll-graphic 1.5s infinite;
-    box-sizing: border-box;
+  color: white;
+  position: absolute;
+  top: 92%;
+  left: 48.5%;
+  width: 24px;
+  height: 24px;
+  -webkit-animation: scroll-graphic 1.5s infinite;
+  animation: scroll-graphic 1.5s infinite;
+  box-sizing: border-box;
 }
 @-webkit-keyframes scroll-graphic {
   0% {
@@ -98,32 +98,28 @@ p {
 #clockdiv{
     color: #fff;
     display: inline-block;
-    font-family: sans-serif;
-    font-size: 30px;
-    font-weight: 100;
-    min-height: 250px;
-    padding-top: 25px;
+    height: 180px;
+    padding-top: 15px;
     text-align: center;
     vertical-align: middle;
 }
 #clockdiv > div{
     background: #8C1D40;
-    border-radius: 3px;
+    border-radius: 10px;
     display: inline-block;
-    height: 200px;
-    width: 175px;
+    height: 140px;
+    width: 125px;
 }
 #clockdiv div > span{
     border-radius: 3px;
     display: inline-block;
-    padding: 15px;
-    padding-top: 50px;
+    padding-top: 30px;
 }
 .days, .hours, .minutes, .seconds{
-    font-size: 55px;
-    font-weight: 999;
+    font-size: 50px;
 }
 .smalltext{
     color: $brand-secondary;
     font-size: 16px;
+    font-weight: bold;
 }
