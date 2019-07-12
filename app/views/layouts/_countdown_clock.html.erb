@@ -1,6 +1,6 @@
 <h2>Next Show Starts In:</h2>
 <div id="clockdiv">
-  <div>
+    <div>
     <span class="days"></span>
     <div class="smalltext">Days</div>
   </div>
@@ -16,9 +16,16 @@
     <span class="seconds"></span>
     <div class="smalltext">Seconds</div>
   </div>
+
+  <% if @events.count != 0 %>
+    <% @events.sort_by{|t| t.start_at}.each do |event| %>
+    <% @day = @events.first().start_at.strftime("%B %d %Y") %> 
+    <% @time = @events.first().start_at.strftime("%T") %>
+    <% end %>
+  <% end %>
 </div>
 
 <script>
-var deadline = 'July 11 2019 10:00:00 PST';
-initializeClock('clockdiv', deadline);
+  var deadline = '<%= @day %> <%= @time %> PDT';
+  initializeClock('clockdiv', deadline);
 </script>
