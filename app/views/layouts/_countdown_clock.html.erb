@@ -1,37 +1,47 @@
-<div id="clockdiv">
-    <div>
-    <span class="days"></span>
-    <div class="smalltext">Days</div>
-  </div>
-  <div>
-    <span class="hours"></span>
-    <div class="smalltext">Hours</div>
-  </div>
-  <div>
-    <span class="minutes"></span>
-    <div class="smalltext">Minutes</div>
-  </div>
-  <div>
-    <span class="seconds"></span>
-    <div class="smalltext">Seconds</div>
-  </div>
-
-  <% if @events.count != 0 %>
-    <% @events.sort_by{|t| t.start_at}.each do |event| %>
-    <% @address = @events.first() %>
-    <% @name = @events.first().name %>
-    <% @description = @events.first().desc %>
-    <% @start_time = @events.first().start_at.strftime("%B %d %Y") + ' ' + @events.first().start_at.strftime("%T") + " PDT" %>
-    <% @end_time = @events.first().end_at.strftime("%B %d %Y") + ' ' + @events.first().end_at.strftime("%T") + " PDT" %>
-   
-
-    <script>
-      // if event.start_at << now && event.end_at >> now
-      // show "event.title" is now live!
-
-      initializeClock('clockdiv', '<%= @start_time %>');
-    </script>
-    <% end %>
+<% if @events.count != 0 %>
+  <% @events.sort_by{|t| t.start_at} %>
+  <% address = @events.first() %>
+  <% name = @events.first().name %>
+  <% description = @events.first().desc %>
+  <% start_time = @events.first().start_at.strftime("%B %d %Y") + ' ' + @events.first().start_at.strftime("%T") + " PDT" %>
+  <% end_time = @events.first().end_at.strftime("%B %d %Y") + ' ' + @events.first().end_at.strftime("%T") + " PDT" %>
+  <% user = User.find(@events.first().usrid) %>
+  <% if Time.current < Time.parse(start_time) %>
+    <div id="clockdiv">
+      <div>
+      <span class="days"></span>
+      <div class="smalltext">Days</div>
+      </div>
+      <div>
+        <span class="hours"></span>
+        <div class="smalltext">Hours</div>
+      </div>
+      <div>
+        <span class="minutes"></span>
+        <div class="smalltext">Minutes</div>
+      </div>
+      <div>
+        <span class="seconds"></span>
+        <div class="smalltext">Seconds</div>
+      </div>
+      <script>
+        initializeClock('clockdiv', '<%= start_time %>');
+      </script>
+    </div>
+    <h3>
+      Until <%= link_to "\"" + name + "\"", address, :class=> "nextEvent", title: description, 'data-toggle': "tooltip", 'data-placement': "bottom" %> goes live!
+    </h3>
+    <h4>
+      Hosted by: <%= link_to user.name, user.permalink, :class=> "nextEvent" %>
+    </h4>
+  <% elsif (Time.current > Time.parse(start_time)) && (Time.current < Time.parse(end_time)) %>
+    <div id="eventCurrentdiv">
+      <h3>
+        <%= link_to "\"" + name + "\"", address, :class=> "currentEvent", title: description, 'data-toggle': "tooltip", 'data-placement': "bottom" %> is live right now!
+      </h3>
+      <h4>
+        Hosted by: <%= link_to user.name, user.permalink, :class=> "currentEvent" %>
+      </h4>
+    </div>
   <% end %>
-</div>
-<h3>Until <%= link_to @name, @address, :class=> "eventTitle", title: @description, 'data-toggle': "tooltip", 'data-placement': "bottom" %> goes live!</h3>
+<% end %>
