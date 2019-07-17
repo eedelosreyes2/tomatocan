@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald');
 #homeWrapper {
     text-align: center;
     //Prevents space between header and heroImage on Firefox.
@@ -6,6 +7,11 @@
 
 p {
     text-align: left;
+    font-size: 15px;
+}
+.title {
+    padding-left: 80px;
+    width: 700px;
 }
 #heroImage {
 	background-image: image-url('heroImage.jpg');
@@ -18,25 +24,180 @@ p {
 #heroImage .alert{
     top: 100px;
 }
+h1 {
+    font-weight: bolder;
+    font-family: 'Oswald';
+    font-size: 50px;
+}
+h2 {
+    font-weight: lighter;
+    font-family: 'Oswald';
+    font-size: 40px;
+}
+h3 {
+    font-weight: lighter;
+    font-family: 'Oswald';
+    font-size: 30px;
+}
 #heroTitle, #heroImage small {
     color: white;
     text-shadow: $overlaid-text;
+<<<<<<< HEAD
+=======
+    text-align: left;
+}
+#buttonTitle{
+    text-align: left;
+>>>>>>> 1d92b7e32b220736ec5796273301a70cce169149
 }
 #haveAccount {
     color: white;
     font-size: 1.75rem;
+<<<<<<< HEAD
     text-align: center;
+=======
+    text-align: left;
+>>>>>>> 1d92b7e32b220736ec5796273301a70cce169149
     font-weight: 600;
     text-shadow: $overlaid-text;
 }
 #haveAccount a {
     color: $brand-secondary;
 }
+.signUpForm {
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.4);
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    float: right;
+    overflow: hidden;
+    position: absolute;
+    top: 200px;
+    right: -100px;
+}
+input {
+    line-height: 30px;
+    width: 100%;
+}
+h3 {
+    color: #8C1D40;
+}
+form h3 {
+  color: white;
+}
+hr {
+  border: 1px solid #d9d9d9;
+}
+.col-md-12 {
+    width: 100%;
+    clear: both;
+    padding: 0px 250px;
+}
+#event {
+    text-align: center;
+}
+.hero {
+    width: 100%;
+    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+    position: relative;
+    text-align: center;
+} 
+.hero::before { 
+    background-image: url("camera.jpg");
+    background-size: 100% 100%;
+    content: "";
+    display: block;
+    position: absolute;
+    top:30px;
+    left:0;
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+    z-index:-2;
+}
+@media (min-width: 320px) {
+.hero::before {
+background-image: url("camera.jpg");
+}
+}
 
+@media (min-width: 460px) {
+.hero::before {
+background-image: url("camera.jpg");
+}
+}
+
+@media (min-width: 720px) {
+.hero::before {
+background-image: url("camera.jpg");;
+}
+}
+
+@media (min-width: 980px) {
+.hero::before {
+background-image: url("camera.jpg");
+}
+}
+
+@media (min-width: 1240px) {
+.hero::before {
+background-image: url("camera.jpg");
+}
+}
+
+@media (min-width: 1500px) {
+.hero::before {
+background-image: url("camera.jpg");
+}
+}
+
+@media (min-width: 1760px) {
+.hero::before {
+background-image: url("camera.jpg");
+}
+}
+/*.flex-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+}*/
+.learnMore {
+    text-align: center;
+    padding: 0px 80px;
+}
+.learnMore h3 {
+    padding: 0px 100px;
+    font-weight: bold;
+    font-size: 40px;
+    color: #8C1D40;
+    text-align: center;
+}
+.learnMore p {
+    padding: 0px 200px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+}
+#rewards, #connect {
+    width: 100%;
+    clear: both;
+    padding: 0px 80px;
+}
+#rewards h2, #connect h2 {
+    font-size: 30px;
+    color: #8C1D40;
+}
+#rewards p, #connect p {
+    font-size: 20px;
+}
 .alert {
-  padding-top: 20px;
-  width: 80%;
-  display:inline-block;
+    padding-top: 20px;
+    width: 80%;
+    display:inline-block;
 }
 #scroll h1{
   color: white;
@@ -75,6 +236,7 @@ p {
     opacity: 0;
   }
 }
+<<<<<<< HEAD
 .col-md-5 p {
     font-size: 15px;
     padding: 15px;
@@ -136,3 +298,5 @@ p {
     display: inline-block;
     padding: 20px;
 }
+=======
+>>>>>>> 1d92b7e32b220736ec5796273301a70cce169149
