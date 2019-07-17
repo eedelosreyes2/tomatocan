@@ -28,20 +28,16 @@
         initializeClock('clockdiv', '<%= start_time %>');
       </script>
     </div>
-    <h3>
-      Until <%= link_to "\"" + name + "\"", address, :class=> "nextEvent", title: description, 'data-toggle': "tooltip", 'data-placement': "bottom" %> goes live!
-    </h3>
-    <h4>
-      Hosted by: <%= link_to user.name, user.permalink, :class=> "nextEvent" %>
-    </h4>
+    <div id="nextEventdiv">
+      <p>Until </p><h3><%= link_to "\"" + name + "\"", address, title: description, 'data-toggle': "tooltip", 'data-placement': "bottom" %></h3><p> goes live!</p>
+      <br>
+      Hosted by: <%= link_to user.name, user.permalink %>
+    </div>
   <% elsif (Time.current > Time.parse(start_time)) && (Time.current < Time.parse(end_time)) %>
     <div id="eventCurrentdiv">
-      <h3>
-        <%= link_to "\"" + name + "\"", address, :class=> "currentEvent", title: description, 'data-toggle': "tooltip", 'data-placement': "bottom" %> is live right now!
-      </h3>
-      <h4>
-        Hosted by: <%= link_to user.name, user.permalink, :class=> "currentEvent" %>
-      </h4>
+      <h3><%= link_to "\"" + name + "\"", address, :class=> "currentEvent", title: description, 'data-toggle': "tooltip", 'data-placement': "bottom" %></h3><p> is live right now!</p>
+      <br>
+      Hosted by: <%= link_to user.name, user.permalink %>
     </div>
   <% end %>
 <% end %>

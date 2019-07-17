@@ -55,6 +55,11 @@
         <p> Content encouraging new users and inviting their friends, colleagues, etc should go here. Content encouraging new users and inviting their friends, colleagues, etc should go here. Content encouraging new users and inviting their friends, colleagues, etc should go here. Content encouraging new users and inviting their friends, colleagues, etc should go here.</p>
         <br><br>
         <hr>
+        <div>
+          <br>
+          <%= render 'layouts/countdown_clock', collection: @events %>
+        </div>
+        <hr>
         <br>
         <h3>Upcoming Events</h3>
         <p id="event">Head to our <a>Events </a>page to view our full schedule</p>
